@@ -11,7 +11,7 @@ function Contact() {
       </div>
 
       <section className="relative flex justify-center items-center py-6 px-3">
-        <div className="relative z-10 w-full max-w-6xl flex flex-col md:flex-row gap-10 bg-gray-800 border border-gray-700 rounded-2xl shadow-lg p-10 text-white">
+        <div className="relative z-10 w-full max-w-6xl flex flex-col md:flex-row gap-10 bg-gray-900 border border-gray-700 rounded-2xl shadow-lg p-10 text-white">
           <div className="flex flex-col justify-center space-y-6 flex-1">
             <h1 className="text-4xl font-extrabold text-yellow-400">
               Get in Touch

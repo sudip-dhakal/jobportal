@@ -1,12 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import Navbar from "../Reusable/Navbar";
 import Background from "../Reusable/Background";
 import { MdEdit } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import DropdownSkills from "./DropdownSkills";
 import AddExperience from "./AddExperience";
+import { UserContext } from "../context/UserContextProvider";
 
 const Profile = () => {
+  const { user } = useContext(UserContext);
   const Navigate = useNavigate();
   const [hoverName, setHoverName] = useState(false);
   const [hoverGmail, setHoverGmail] = useState(false);
@@ -98,7 +100,19 @@ const Profile = () => {
             </div>
 
             <div className="w-full">
-              <h3 className="text-lg font-semibold mb-2">Resume</h3>
+              <div className="flex justify-between items-center">
+                <h3 className="text-lg font-semibold mb-2">Resume</h3>
+                <button
+                  onClick={() => {
+                    localStorage.removeItem("user");
+                    Navigate("/");
+                    toast.success("Logged out successfully ");
+                  }}
+                  className="bg-red-600 px-2 py-1 mb-4 hover:bg-red-700 duration-300 transition-all text-white rounded-lg cursor-pointer"
+                >
+                  Logout
+                </button>
+              </div>
               <div className="bg-gray-800 p-3 rounded-lg flex items-center justify-between">
                 <p className="text-gray-400 text-sm">resume_sudipdhakal.pdf</p>
                 <button className="px-3 py-1 bg-yellow-600 rounded-lg hover:bg-yellow-500 transition text-sm cursor-pointer">

@@ -24,7 +24,7 @@ const JobCard = () => {
       </header>
 
       <div className="pt-2">
-        <h3 className="text-2xl font-extrabold text-blue-400 leading-tight">
+        <h3 className="text-2xl font-extrabold text-white leading-tight">
           Frontend Developer
         </h3>
       </div>
