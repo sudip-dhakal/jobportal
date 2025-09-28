@@ -43,10 +43,13 @@ const Register = () => {
 
     try {
       let response = await axios.post(`${USER_API}/register`, formDataValue, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
         withCredentials: true,
       });
 
-      if (response.status === 200) {
+      if (response.status===201) {
         console.log("Data sent successfully");
         navigation("/login");
       }

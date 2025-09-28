@@ -16,6 +16,7 @@ const register = async (req, res) => {
     }
 
     const user = await User.findOne({ email });
+    console.log("The user is ", user);
     if (user) {
       return res.status(400).json({
         error: "Email already exists",

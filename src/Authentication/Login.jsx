@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { USER_API } from "../constant";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Login = () => {
-  const Navigation=useNavigate();
+  const Navigation = useNavigate();
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -27,8 +28,9 @@ const Login = () => {
         withCredentails: true,
       });
       if (res.data.success) {
-        console.log("Data sent successfully");
-        Navigation('/jobs');
+        toast.success("Logged In successfully")
+        localStorage.setItem("user", 1);
+        Navigation("/jobs");
       }
     } catch (error) {
       console.log(error);

@@ -9,6 +9,8 @@ import Profile from "./User/Profile";
 import Rec_Home from "./Recruiter/Rec_Home";
 import Companies from "./Recruiter/Companies";
 import Applications from "./Recruiter/Applications";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -26,6 +28,18 @@ function App() {
           <Route path="/applications" element={<Applications />}/>
         </Routes>
       </BrowserRouter>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </>
   );
 }
